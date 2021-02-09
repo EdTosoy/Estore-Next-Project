@@ -1,0 +1,3 @@
+mutation RemoveFromCart($user_id: String!, $id: Float!) {
+  removeFromCart(user_id: $user_id, id: $id) 
+}

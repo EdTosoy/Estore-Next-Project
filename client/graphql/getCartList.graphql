@@ -1,0 +1,9 @@
+query GetCartList{
+  getCartList{
+    id
+    url
+    name
+    price
+    user_id
+  }
+}
