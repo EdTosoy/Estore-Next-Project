@@ -1,5 +1,8 @@
 import Image from "next/image";
-import { useAddToCartMutation } from "../generated/graphql";
+import {
+  useAddToCartMutation,
+  useGetCartListQuery,
+} from "../generated/graphql";
 import { uid } from "../lib/auth";
 
 interface productType {
@@ -15,10 +18,10 @@ interface productType {
 export default function ShopShowCase({ products }: productType) {
   const [addToCart] = useAddToCartMutation();
   return (
-    <div className=" col-span-4 grid grid-cols-4 gap-5 pt-20 pb-10 ">
-      <div className="col-span-full mb-4 flex justify-between ">
-        <div className="">
-          <h1 className="text-2xl text-red-400 ">PAGENAME HOT DEALS </h1>
+    <div className=" col-span-4 grid grid-cols-1 md:grid-cols-4 gap-5 pt-20 pb-10 ">
+      <div className="col-span-full mb-4 flex flex-col md:flex-row  justify-between ">
+        <div className="mb-4">
+          <h1 className="text-2xl text-red-400 ">EStore HOT DEALS </h1>
           <p>subscribe to our newsletter for more products</p>
         </div>
         <select

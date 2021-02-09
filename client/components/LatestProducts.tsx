@@ -3,6 +3,7 @@ import data from "products.json";
 import Image from "next/image";
 import { uid } from "lib/auth";
 import { useAddToCartMutation } from "../generated/graphql";
+import { useMediaQuery } from '../hooks/useMediaQuery';
 
 // Import Swiper styles
 export default function LatestProducts() {
@@ -11,6 +12,7 @@ export default function LatestProducts() {
   );
   const [addToCart] = useAddToCartMutation();
 
+  const isBreakPoint = useMediaQuery(768)
   return (
     <div className="bg-white  col-start-2 col-end-3  pt-20 pb-10 ">
       <div className="text-center">
@@ -19,7 +21,7 @@ export default function LatestProducts() {
       </div>
       <Swiper
         spaceBetween={20}
-        slidesPerView={4}
+        slidesPerView={isBreakPoint ? 1.3 : 4}
         onSlideChange={() => console.log("slide change")}
         onSwiper={(swiper) => console.log(swiper)}
         className="w-full py-10"

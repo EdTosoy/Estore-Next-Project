@@ -1,6 +1,9 @@
 import Image from "next/image";
+import { SwiperSlide, Swiper } from "swiper/react";
+import { useMediaQuery } from "../hooks/useMediaQuery";
 
 export default function Testimonials() {
+  const isBreakpoint = useMediaQuery(768);
   const testimonials = [
     {
       text:
@@ -27,30 +30,34 @@ export default function Testimonials() {
       id: "3",
     },
   ];
+
   return (
-    <section className="grid-container bg-testimonialBG bg-no-repeat bg-right py-32">
+    <section className="grid-container bg-testimonialBG bg-no-repeat bg-right py-20 md:py-32">
       <main className="col-start-2 col-end-3">
         <h1 className=" text-2xl md:text-4xl">What our Customers say</h1>
-
-        <div className="flex-row md:flex mt-10 md:mt-20 ">
+        <Swiper
+          spaceBetween={20}
+          slidesPerView={isBreakpoint ? 1 : 1.4}
+          className="flex-row md:flex mt-10 md:mt-20 max-w-3xl rounded-xl "
+        >
           {testimonials.map(({ name, img, company, text, id }) => (
-            <div
-              className=" bg-gradient-to-tr from-purple-300 to-red-200 max-w-sm rounded-3xl transform cursor-pointer mb-4"
+            <SwiperSlide
+              className="bg-gradient-to-tr from-purple-300    to-red-200 rounded-3xl transform cursor-pointer "
               key={id}
             >
-              <div className=" border p-8  rounded-3xl  ">
+              <div className=" border p-4 md:p-16  rounded-3xl  ">
                 <div className="rounded-full overflow-hidden relative w-14 h-14 shadow-md py-2 border-4 border-white ring-1 ring-black mb-4  ">
                   <div className="">
                     <Image src={img} layout="fill" />
                   </div>
                 </div>
-                <p className="mb-4">{text}</p>
+                <p className="mb-4 md:text-lg ">{text}</p>
                 <h1 className="font-semibold ">{name}</h1>
                 <cite className="text-xs">{company}</cite>
               </div>
-            </div>
+            </SwiperSlide>
           ))}
-        </div>
+        </Swiper>
       </main>
     </section>
   );

@@ -42,16 +42,15 @@ export default function Auth() {
   };
 
   return (
-    <div className="grid-container">
+    <div className="grid-container ">
       <main className="col-start-2 col-end-3 grid place-content-center text-center  ">
-        <div className="border max-w-md p-8 sh rounded-lg bg-gradient-to-tr from-purple-600 to-red-400 mt-10">
-          <h1 className="text-4xl mb-4">Free account</h1>
-          <p className="text-sm mb-4">
-            Create apps, connect databases and add-on services, and collaborate
-            on your apps, for free
+        <div className="border max-w-md p-4 md:p-8 sh rounded-lg bg-gradient-to-tr from-purple-600 to-red-400 mt-10">
+          <h1 className=" text-3xl md:text-4xl md:mb-4">Free Account</h1>
+          <p className="text-sm md:text-base mb-2 md:mb-4">
+            EStore the leading online shoppin platform in SouthEast Asia and Taiwan
           </p>
           <form
-            className="text-left text-xl"
+            className="text-left md:text-xl "
             onSubmit={registration ? handleRegisterSubmit : handleLoginSubmit}
           >
             {registration && (
@@ -89,7 +88,7 @@ export default function Auth() {
               className="block p-2 rounded-md my-2 w-full"
               onChange={(e) => setPassword(e.target.value)}
             />
-            <div className="flex justify-between text-sm">
+            <div className="flex justify-between md:text-sm text-xs">
               <div className="">
                 <input
                   type="checkbox"
@@ -103,18 +102,18 @@ export default function Auth() {
               <p>Forget Password?</p>
             </div>
             <button
-              className="w-full p-3 rounded-md mt-5 bg-purple-800 hover:bg-purple-700  text-white "
+              className="w-full  p-2 md:p-3 rounded-md  mt-3 md:mt-5 bg-purple-800 hover:bg-purple-700  text-white "
               type="submit"
             >
               {registration ? "Sign Up Free Account" : "Login Your Account"}
             </button>
             <button
-              className=" w-full p-3 rounded-md mt-5 bg-black   text-white"
+              className=" w-full  p-2 md:p-3 rounded-md  mt-3 md:mt-5 bg-black   text-white"
               onClick={() => setRegistration((prev) => !prev)}
             >
               {registration ? "Login Your Account" : "Create New Account"}
             </button>
-            <p className="text-sm mt-5">
+            <p className="md:text-sm text-xs  mt-3 md:mt-5">
               Signing up signifies that you have read and agree to the Terms of
               Service and our Privacy Policy.
             </p>

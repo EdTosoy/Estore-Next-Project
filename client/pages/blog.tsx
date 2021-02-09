@@ -2,6 +2,7 @@ import Header from "../components/Header";
 import { SwiperSlide, Swiper } from "swiper/react";
 import Image from "next/image";
 import React from "react";
+import { useMediaQuery } from "../hooks/useMediaQuery";
 
 export default function blog() {
   const blogs = [
@@ -41,6 +42,7 @@ export default function blog() {
       img: "/images/news5.jpg",
     },
   ];
+  const isBreakPoint = useMediaQuery(768);
   return (
     <div>
       <Header />
@@ -52,7 +54,7 @@ export default function blog() {
           </div>
           <Swiper
             spaceBetween={20}
-            slidesPerView={3}
+            slidesPerView={isBreakPoint ? 1.2 : 4}
             onSlideChange={() => console.log("slide change")}
             onSwiper={(swiper) => console.log(swiper)}
             className="w-full py-10 "
@@ -62,7 +64,7 @@ export default function blog() {
                 <div className="">
                   <Image src={img} width={300} height={300} />
                 </div>
-                <p className="text-sm text-justify ">{text}</p>
+                <p className="text-sm md:text-justify ">{text}</p>
                 <h1 className="text-xl font-semibold">{title}</h1>
                 <cite className="block">-{author}</cite>
               </SwiperSlide>

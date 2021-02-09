@@ -42,8 +42,8 @@ export default function Header() {
       id="home"
     >
       <main className="col-start-2 col-end-3 flex items-center justify-between py-4">
-        <div className="">
-          <a href="/#">PAGENAME</a>
+        <div className="text-2xl text-red-600 ">
+          <a href="/#">EStore</a>
         </div>
         <div className="hidden md:flex ">
           {nav.map(({ name, pathname }) => (
