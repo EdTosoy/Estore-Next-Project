@@ -32,10 +32,3 @@ export async function getStaticProps() {
     revalidate: 1,
   };
 }
-
-export const getStaticPaths = async () => {
-  return {
-    paths: ["/"],
-    fallback: true,
-  };
-};

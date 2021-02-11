@@ -13,6 +13,9 @@ export class GetCartlist {
 
     try {
       const token = await cookies.token;
+      if (token === "") {
+        return null;
+      }
       const { user_id }: any = await jwt_decode(token);
 
       return CartList.find({ where: { user_id } });
