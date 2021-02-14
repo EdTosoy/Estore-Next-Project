@@ -33,6 +33,12 @@
     "type-graphql": "^1.1.1",
     "typeorm": "^0.2.30"
   },
+  "include": [
+    "src/**/*.*"
+  ],
+  "exclude": [
+    "node_modules"
+  ],
   "scripts": {
     "start": "nodemon --exec ts-node src/index.ts"
   }

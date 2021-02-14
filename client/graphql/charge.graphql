@@ -1,3 +1,0 @@
-mutation Charge($amount: Float!, $id: String!) {
-  charge(amount: $amount, id: $id)
-}

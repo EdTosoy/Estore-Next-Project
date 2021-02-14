@@ -1,8 +1,0 @@
-mutation AddToCart(
-  $user_id: String!
-  $url: String!
-  $price: String!
-  $name: String!
-) {
-  addToCart(user_id: $user_id, url: $url, price: $price, name: $name)
-}
