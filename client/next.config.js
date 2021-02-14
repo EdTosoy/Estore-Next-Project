@@ -5,12 +5,12 @@ module.exports = {
     defaultLocale: "en",
   },
   env: {
-    API_KEY: "AIzaSyBbVE7vIxFMg2jXU0zgMZuNLrp9rhVF3Hg",
-    AUTH_DOMAIN: "estore-next-project.firebaseapp.com",
-    PROJECT_ID: "estore-next-project",
-    STORAGE_BUCKET: "estore-next-project.appspot.com",
-    MESSAGING_SENDER_ID: "416406830303",
-    APP_ID: "1:416406830303:web:b2cb2045fa1a3cf6547d6a",
+    API_KEY: process.env.API_KEY,
+    AUTH_DOMAIN: process.env.AUTH_DOMAIN,
+    PROJECT_ID: process.env.PROJECT_ID,
+    STORAGE_BUCKET: process.env.STORAGE_BUCKET,
+    MESSAGING_SENDER_ID: process.env.MESSAGING_SENDER_ID,
+    APP_ID: process.env.APP_ID,
   },
   webpack: (config, options) => {
     config.node = {

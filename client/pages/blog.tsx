@@ -3,6 +3,7 @@ import { SwiperSlide, Swiper } from "swiper/react";
 import Image from "next/image";
 import React from "react";
 import { useMediaQuery } from "../hooks/useMediaQuery";
+import Head from "next/head";
 
 export default function blog() {
   const blogs = [
@@ -45,6 +46,13 @@ export default function blog() {
   const isBreakPoint = useMediaQuery(768);
   return (
     <div>
+      <Head>
+        <title>Estore | Blogs </title>
+        <meta
+          name="description"
+          content="trending smart phones and accessories style collection, Shop for the latest smartphone deals from Samsung, Apple, Oppo, LG, Asus and more."
+        />
+      </Head>
       <Header />
       <div className="grid-container pt-20 ">
         <main className="col-start-2 col-end-3  ">
