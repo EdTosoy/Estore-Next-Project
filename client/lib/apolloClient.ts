@@ -9,7 +9,7 @@ import {
 let apolloClient: ApolloClient<NormalizedCacheObject>;
 
 const httpLink = createHttpLink({
-  uri: "http://localhost:4000/graphql",
+  uri: process.env.URI,
   credentials: "include",
 });
 
