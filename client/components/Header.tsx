@@ -6,7 +6,6 @@ import { verifyIdToken } from "../firebaseAdmin";
 import React, { useContext } from "react";
 import { AuthContext, uid } from "../lib/auth";
 import firebase from "firebase";
-import { setAccessToken } from "../lib/accessToken";
 
 export default function Header() {
   const nav = [
